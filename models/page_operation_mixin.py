@@ -288,6 +288,7 @@ class PageOperationMixin(object):
                 'docs.google.com'
             )
             cleaner.forms = False
+            cleaner.scripts = False
             rendered = cleaner.clean_html(rendered)
 
             # remove div wrapper if there is one

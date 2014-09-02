@@ -133,7 +133,35 @@
     <div><a name="skip"></a></div>
 
     {% block body %}{% endblock %}
-</div>
+
+    <div id="google-adsense" style="text-align:center;">
+        <form method="get" action="http://www.google.co.kr/custom" target="google_window">
+        <input type="hidden" name="domains" value="e.biohackers.net"></input>
+        <input type="text" name="q" size="16" maxlength="255" value="{% if page %}{{ page.title }}{% endif %}"></input>
+        <input type="submit" name="sa" value="google"></input>
+        <input type="radio" name="sitesearch" value=""></input>
+        <font size="-1" color="#000000">web</font>
+        <input type="radio" name="sitesearch" value="e.biohackers.net" checked="checked"></input>
+        <font size="-1" color="#000000">biohackers.net</font>
+        <input type="hidden" name="client" value="pub-1277419434092684"></input>
+        <input type="hidden" name="forid" value="1"></input>
+        <input type="hidden" name="ie" value="UTF-8"></input>
+        <input type="hidden" name="oe" value="UTF-8"></input>
+        <input type="hidden" name="cof" value="GALT:#0066CC;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LBGC:FF9900;ALC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;FORID:1;"></input>
+        <input type="hidden" name="hl" value="ko"></input>
+        </form>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ebh3 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1277419434092684"
+             data-ad-slot="5936925158"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>/div>
 
 <script src="/statics/js/jquery.js?ver={{ app.version }}"></script>
 <script src="/statics/js/jquery.appear.js?ver={{ app.version }}"></script>

@@ -78,20 +78,21 @@ var upload = (function($) {
                 request.execute(function(resp) {
                     var mimeType = resp['mimeType'];
                     var url = resp['webContentLink'];
+                    var thumbnailUrl = resp['thumbnailLink'];
                     self._ready = true;
                     if(self._listener) {
                         self._listener.onUploaderStateChanged(self._ready);
-                        self._listener.onUploaded(url, mimeType);
+                        self._listener.onUploaded(url, thumbnailUrl, mimeType);
                     }
                     if(additionalCallback) {
-                        additionalCallback(url, mimeType);
+                        additionalCallback(url, thumbnailUrl, mimeType);
                     }
                 });
             };
         },
         _prepareUploadCallback: function(result) {
             // Try again if fail
-            if(!result) {
+            if(!result || result.error) {
                 this._api.auth.authorize(
                     {'client_id': this._oauthClientId, 'scope': this._apiScopes.join(' '), 'immediate': false},
                     this._prepareUploadCallback.bind(this)
